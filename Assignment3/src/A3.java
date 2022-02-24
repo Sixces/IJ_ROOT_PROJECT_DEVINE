@@ -85,7 +85,7 @@ public class A3
     {
         // print each value in the array, insert an empty space between each value
 		for (int i = 0; i < count; i++)
-			System.out.println();
+			System.out.print(array[i] + " ");
     }
 
 	static void insertInOrder( int[] arr, int count, int newVal   )
@@ -97,6 +97,14 @@ public class A3
 		// the array to the left.
 		//Be careful NOT to run of the front of the array so also test to make sure counter >=0. 
 		//The loop is solely moving items out of the inserts way. When the loop reachs a breaking condition, then insert the newVal at the address counter+1.
+		int sortCounter;
+		for (sortCounter = arr.length-1; (sortCounter > 0) && (sortCounter < arr.length); sortCounter--){
+			if (newVal < arr[sortCounter])
+				arr[sortCounter + 1] = arr[sortCounter];
+		}
+
+		arr[sortCounter] = newVal;
+
 		
 	}
 
